@@ -210,4 +210,29 @@ namespace oop
             return 10;
         }
     }
+
+    class Banka
+    {
+        int bakiye;
+        
+        public int Bakiye
+        {
+            get
+            {
+                if (bakiye > 0) { return bakiye * 10; }
+                return 5;
+            }
+            set
+            {
+                if (value < 10)
+                {
+                    bakiye = value;
+                }
+                else
+                {
+                    bakiye = value * 95 / 100;
+                }
+            }
+        }
+    }
 }
