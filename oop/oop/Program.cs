@@ -84,10 +84,10 @@ namespace oop
             #endregion
 
             #region 9. Metodlar
-            myclass9 m9 = new myclass9();
+            //myclass9 m9 = new myclass9();
             //Parantez ile birlikte çağrılır.
-            Console.WriteLine(m9.x());
-            Console.ReadKey();
+            //Console.WriteLine(m9.x());
+            //Console.ReadKey();
             #endregion
         }
     }
