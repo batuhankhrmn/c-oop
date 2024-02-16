@@ -170,7 +170,7 @@ namespace oop
 
     class fiyat
     {
-        public int urunFiyat = 325;
+        public int urunFiyat = 525;
         public int kdv = 20;
         public int UrunSonFiyat
         {
