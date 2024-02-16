@@ -22,52 +22,58 @@ namespace oop
             #endregion
 
             #region 4. Sınıf Modelinden Referans Noktası Oluşturma
-            transkriptHesapla t;
-            OrnekModel m;
+            //transkriptHesapla t;
+            //OrnekModel m;
             #endregion
 
             #region 5. Class Member
 
             #region Field
-            myclass m1 = new myclass();
-            m1.a = 1;
-            m1.b = "2";
+            //myclass m1 = new myclass();
+            //m1.a = 1;
+            //m1.b = "2";
             #endregion
 
             #region Property
             //Nesne içerisindeki field lar için bir validasyon katmanıdır.
-            myclass2 m2 = new myclass2();
+            //myclass2 m2 = new myclass2();
             //Get blogu tetiklenecek.
-            Console.WriteLine(m2.Yasi);
+            //Console.WriteLine(m2.Yasi);
 
             //Set blogu tetiklenecek
-            m2.Yasi = 3;
+            //m2.Yasi = 3;
             //Get blogu tetiklenecek
-            Console.WriteLine(m2.Yasi);
+            //Console.WriteLine(m2.Yasi);
             #endregion
 
             #endregion
 
             #region Örnek1
-            gecmeNotuHesapla g = new gecmeNotuHesapla();
-            g.not1 = 99;
-            g.not2 = 6;
+            //gecmeNotuHesapla g = new gecmeNotuHesapla();
+            //g.not1 = 99;
+            //g.not2 = 6;
 
-            Console.WriteLine(g.ortalamaHesapla());
-            Console.ReadLine();
+            //Console.WriteLine(g.ortalamaHesapla());
+            //Console.ReadLine();
             #endregion
 
             #region 6. Prop Property
             //Prop Property'de field tanımlamaya gerek yoktur.
-            myclass3 m3 = new myclass3();
-            Console.WriteLine(m3.Yas1);
-            Console.WriteLine(m3.Yas2);
-            Console.ReadLine();
+            //myclass3 m3 = new myclass3();
+            //Console.WriteLine(m3.Yas1);
+            //Console.WriteLine(m3.Yas2);
+            //Console.ReadLine();
             #endregion
 
             #region 7. Computed Property
-            myclass4 m4 = new myclass4();
-            Console.WriteLine(m4.Topla);
+            //myclass4 m4 = new myclass4();
+            //Console.WriteLine(m4.Topla);
+            #endregion
+
+            #region Örnek2
+            fiyat f = new fiyat();
+            Console.WriteLine(f.UrunSonFiyat);
+            Console.ReadLine();
             #endregion
         }
     }
@@ -158,6 +164,19 @@ namespace oop
             get
             {
                 return sayi1 + sayi2 ;
+            }
+        }
+    }
+
+    class fiyat
+    {
+        public int urunFiyat = 185;
+        public int kdv = 20;
+        public int UrunSonFiyat
+        {
+            get
+            {
+                return ((urunFiyat * kdv)/100) + urunFiyat;
             }
         }
     }
