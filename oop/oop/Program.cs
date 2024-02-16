@@ -71,9 +71,23 @@ namespace oop
             #endregion
 
             #region Örnek2
-            fiyat f = new fiyat();
-            Console.WriteLine(f.UrunSonFiyat);
-            Console.ReadLine();
+            //fiyat f = new fiyat();
+            //Console.WriteLine(f.UrunSonFiyat);
+            //Console.ReadLine();
+            #endregion
+
+            #region 8. Experession-Bodied Property
+            //Prop'tan sadece değer dönen yapılardır.Sadece readonlydir.
+            //myclass5 m5 = new myclass5();
+            //Console.WriteLine(m5.Cinsiyet);
+            //Console.ReadLine();
+            #endregion
+
+            #region 9. Metodlar
+            myclass9 m9 = new myclass9();
+            //Parantez ile birlikte çağrılır.
+            Console.WriteLine(m9.x());
+            Console.ReadKey();
             #endregion
         }
     }
@@ -170,7 +184,7 @@ namespace oop
 
     class fiyat
     {
-        public int urunFiyat = 1025;
+        public int urunFiyat = 825;
         public int kdv = 20;
         public int UrunSonFiyat
         {
@@ -178,6 +192,22 @@ namespace oop
             {
                 return ((urunFiyat * kdv) / 100) + urunFiyat;
             }
+        }
+    }
+
+    class myclass5
+    {
+        public String Cinsiyet => "Erkek";
+    }
+
+    class myclass9
+    {
+        public int a;
+        public string b;
+
+        public int x()
+        {
+            return 10;
         }
     }
 }
