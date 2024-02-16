@@ -119,7 +119,7 @@ namespace oop
 
     class myclass
     {
-        public int a;
+        public int aaa;
         public string b;
     }
 
