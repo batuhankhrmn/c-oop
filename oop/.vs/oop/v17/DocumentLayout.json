@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\batuhan\\Desktop\\c-oop\\oop\\",
+  "WorkspaceRootPath": "C:\\Users\\batuhan\\Desktop\\dev\\Kurs\\c-oop\\oop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24589E8B-BE7B-44A9-8B2A-186CC96A9844}|oop\\oop.csproj|c:\\users\\batuhan\\desktop\\c-oop\\oop\\oop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24589E8B-BE7B-44A9-8B2A-186CC96A9844}|oop\\oop.csproj|c:\\users\\batuhan\\desktop\\dev\\kurs\\c-oop\\oop\\oop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24589E8B-BE7B-44A9-8B2A-186CC96A9844}|oop\\oop.csproj|solutionrelative:oop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\batuhan\\Desktop\\c-oop\\oop\\oop\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\batuhan\\Desktop\\dev\\Kurs\\c-oop\\oop\\oop\\Program.cs",
               "RelativeDocumentMoniker": "oop\\Program.cs",
-              "ToolTip": "C:\\Users\\batuhan\\Desktop\\c-oop\\oop\\oop\\Program.cs",
+              "ToolTip": "C:\\Users\\batuhan\\Desktop\\dev\\Kurs\\c-oop\\oop\\oop\\Program.cs",
               "RelativeToolTip": "oop\\Program.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAgwKwAAAAjAAAA",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAswLYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-16T17:18:19.272Z",
               "EditorCaption": ""

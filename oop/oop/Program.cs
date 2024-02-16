@@ -163,7 +163,7 @@ namespace oop
         {
             get
             {
-                return sayi1 + sayi2 ;
+                return sayi1 + sayi2;
             }
         }
     }
@@ -176,7 +176,7 @@ namespace oop
         {
             get
             {
-                return ((urunFiyat * kdv)/100) + urunFiyat;
+                return ((urunFiyat * kdv) / 100) + urunFiyat;
             }
         }
     }
