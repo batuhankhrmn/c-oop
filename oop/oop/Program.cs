@@ -115,6 +115,7 @@ namespace oop
     {
         public int a;
         public string b;
+        public string c;
     }
 
     class myclass
