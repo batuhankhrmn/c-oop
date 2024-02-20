@@ -89,6 +89,18 @@ namespace oop
             //Console.WriteLine(m9.x());
             //Console.ReadKey();
             #endregion
+
+            #region 10. Sınıf İçinde Sınıf Kullanımı
+            myclass6 m6 = new myclass6();
+
+            myclass6.myclass6_1 m6_1 = new myclass6.myclass6_1();
+            #endregion
+
+            #region 11. Sınıf Elemanlarına Açıklama Satırı Ekleme
+            myclass7 m67 = new myclass7();
+            m67.yas = 7;
+            m67.maasHesapla(4200);
+            #endregion
         }
     }
     #region 3. Sınıf Oluşturma ve Konumları
@@ -234,6 +246,41 @@ namespace oop
                     bakiye = value * 95 / 100;
                 }
             }
+        }
+    }
+
+    class myclass6
+    {
+        int a;
+
+        public int A { get; set; }
+
+        public class myclass6_1
+        {
+
+        }
+        /// <summary>
+        /// Bu sınıf kdv hesaplaması yapar. 
+        /// </summary>           
+    }
+
+    class myclass7
+    {
+        int maas;
+
+        ///<summary>
+        ///Bu bir yaş propertysidir.
+        ///</summary>
+        public int yas { get; set}
+
+        ///<summary>
+        ///Bu metod ödenecek maaşı hesaplar.
+        ///</summary>
+        ///<param name="yalinMaas"></param>
+        ///<returns>Ek ödemeli maaş bilgisini hesaplar.</returns>
+        public double maasHesapla(double yalinMaas)
+        {
+            return yalinMaas + 100;
         }
     }
 }
