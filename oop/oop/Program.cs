@@ -109,16 +109,35 @@ namespace oop
             #region 13. Sorular
             //Basit bir banka hesabı işlemleri
 
-            Banka2 b = new Banka2();
+            //Banka2 b = new Banka2();
 
-            Console.WriteLine("Güncel bakiye:" + b.hesapBakiyesi());
+            //Console.WriteLine("Güncel bakiye:" + b.hesapBakiyesi());
 
-            b.paraYatir(200);
-            Console.WriteLine("Para yatırma işlemi sonunda bakiye:" + b.Bakiye);
+            //b.paraYatir(200);
+            //Console.WriteLine("Para yatırma işlemi sonunda bakiye:" + b.Bakiye);
 
-            b.paraCek(150);
-            Console.WriteLine("Para çekme işlemi sonunda bakiye:" + b.Bakiye);
-            Console.ReadLine();
+            //b.paraCek(150);
+            //Console.WriteLine("Para çekme işlemi sonunda bakiye:" + b.Bakiye);
+            //Console.ReadLine();
+
+
+
+            //Çalışan sınıfı oluşturun bu sınıfın çalışan adı, departmanı, aylık maaş bilgileri gibi özellikleri olsun. Ayrıca maaş artışı yapılacak bir metod içersin.
+            //calisan c = new calisan();
+            //Console.WriteLine("Çalışanın adı:" + c.Adi);
+            //Console.WriteLine("Çalışanın departmanı:" + c.Departmani);
+            //Console.WriteLine("Çalışanın güncel maaşı:" + c.Maas);
+            //c.maasArtisi(0.1);
+            //Console.WriteLine("Zamdan sonra maaş:" + c.Maas);
+            //Console.ReadLine();
+
+
+
+            //Girilen sayının faktöreyelini hesaplayan bir sınıf ve metod oluşturunuz.
+            //faktoriyel f = new faktoriyel();
+            //f.Sayi = 5;
+            //Console.WriteLine("Faktoriyel: " + f.faktoriyelHesaplama(f.Sayi));
+            //Console.ReadLine();
             #endregion
         }
     }
@@ -346,6 +365,33 @@ namespace oop
         public void paraYatir(double yatiralacakTutar)
         {
             Bakiye = Bakiye + yatiralacakTutar;
+        }
+    }
+
+    class calisan
+    {
+        public string Adi { get; set; } = "Batuhan";
+        public string Departmani { get; set; } = "Yazılım Departmanı";
+        public double Maas { get; set; } = 54000;
+
+        public void maasArtisi(double arttirilacakTutar)
+        {
+            Maas = Maas + (Maas * arttirilacakTutar);
+        }
+    }
+
+    class faktoriyel
+    {
+        public int Sayi { get; set; }
+
+        public int faktoriyelHesaplama(int deger)
+        {
+            int sonuc=1;
+            for (int i = 1; i <= Sayi; i++)
+            {
+                sonuc *= i;
+            }
+            return sonuc;
         }
     }
 }
