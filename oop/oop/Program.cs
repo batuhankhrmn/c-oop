@@ -91,15 +91,34 @@ namespace oop
             #endregion
 
             #region 10. Sınıf İçinde Sınıf Kullanımı
-            myclass6 m6 = new myclass6();
+            //myclass6 m6 = new myclass6();
 
-            myclass6.myclass6_1 m6_1 = new myclass6.myclass6_1();
+            //myclass6.myclass6_1 m6_1 = new myclass6.myclass6_1();
             #endregion
 
             #region 11. Sınıf Elemanlarına Açıklama Satırı Ekleme
-            myclass7 m67 = new myclass7();
-            m67.yas = 7;
-            m67.maasHesapla(4200);
+            //myclass7 m67 = new myclass7();
+            //m67.yas = 7;
+            //m67.maasHesapla(4200);
+            #endregion
+
+            #region 12. This Keyword'ü
+
+            #endregion
+
+            #region 13. Sorular
+            //Basit bir banka hesabı işlemleri
+
+            Banka2 b = new Banka2();
+
+            Console.WriteLine("Güncel bakiye:" + b.hesapBakiyesi());
+
+            b.paraYatir(200);
+            Console.WriteLine("Para yatırma işlemi sonunda bakiye:" + b.Bakiye);
+
+            b.paraCek(150);
+            Console.WriteLine("Para çekme işlemi sonunda bakiye:" + b.Bakiye);
+            Console.ReadLine();
             #endregion
         }
     }
@@ -271,7 +290,7 @@ namespace oop
         ///<summary>
         ///Bu bir yaş propertysidir.
         ///</summary>
-        public int yas { get; set}
+        public int yas { get; set; }
 
         ///<summary>
         ///Bu metod ödenecek maaşı hesaplar.
@@ -281,6 +300,52 @@ namespace oop
         public double maasHesapla(double yalinMaas)
         {
             return yalinMaas + 100;
+        }
+    }
+
+    class myclass8
+    {
+
+    }
+
+    class Araba
+    {
+
+    }
+
+    class Hesaplama
+    {
+
+    }
+
+    class musteri
+    {
+
+    }
+
+    class Banka2
+    {
+
+        public double Bakiye
+        {
+            get; set;
+        } = 100;
+
+        public double hesapBakiyesi()
+        {
+            return Bakiye;
+        }
+
+        public void paraCek(double cekilecekTutar)
+        {
+            if (cekilecekTutar <= Bakiye)
+            {
+                Bakiye = Bakiye - cekilecekTutar;
+            }
+        }
+        public void paraYatir(double yatiralacakTutar)
+        {
+            Bakiye = Bakiye + yatiralacakTutar;
         }
     }
 }
