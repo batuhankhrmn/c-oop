@@ -138,6 +138,9 @@ namespace oop
             //f.Sayi = 5;
             //Console.WriteLine("Faktoriyel: " + f.faktoriyelHesaplama(f.Sayi));
             //Console.ReadLine();
+
+
+            //Bir pizza sipariş uygulaması, pizza sınıfı oluşturalım pizzanın boyutu, malzemeleri, fiyatı gibi özellikleri içersin sipariş verme ve ödeme işlemlerini gerçekleştirebilecek metodları yazalım. 
             #endregion
         }
     }
