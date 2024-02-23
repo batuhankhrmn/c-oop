@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace oop
 {
@@ -103,7 +105,8 @@ namespace oop
             #endregion
 
             #region 12. This Keyword'ü
-
+            //Sınıfın nesnesini temsil eder, metod ile field isimlerinin karışmasını engeller.
+            myclass8 m8 = new myclass8();
             #endregion
 
             #region 13. Sorular
@@ -141,9 +144,97 @@ namespace oop
 
 
             //Bir pizza sipariş uygulaması, pizza sınıfı oluşturalım pizzanın boyutu, malzemeleri, fiyatı gibi özellikleri içersin sipariş verme ve ödeme işlemlerini gerçekleştirebilecek metodları yazalım. 
+            Pizza pizza = new Pizza();
+            Console.WriteLine("Pizzanızın tür numarasını giriniz:");
+            pizza.pizzaTurNo = int.Parse(Console.ReadLine());
+            pizza.pizzaBoyutu = "Orta Boy";
+            Console.WriteLine("Lütfen adresinizi giriniz:");
+            string adres = Console.ReadLine();
+            Console.WriteLine("Lütfen ödeyeceğiniz miktarı giriniz:");
+            double odenenPara = int.Parse(Console.ReadLine());
+            pizza.siparisVer(pizza.pizzaTurNo,pizza.pizzaBoyutu, adres, odenenPara);
+            Console.ReadLine();
+            #endregion
+
+            #region 14. Init-Only Proporties
+            //Sadece intialize edilirken değer alabilir.
+            //myclass9 m9 = new myclass9
+            //{
+            //    x = 5
+            //};
+
+            //m9.x = 4;
+            #endregion
+
+            #region 15. Record
+            //Record, bir objenin topyekün olarak sabit/değişmez olarak kalmasını sağlamakta ve bu durumu güvence altına almaktadır.
+            //Böylece bu obje, artık değeri değişmeyeceğinden dolayı esasında objeden ziyade bir değer gözüyle bakılan bir yapıya dönüşmektedir.
+            //Buradan yola çıkarak, record'ları içerisinde data barındıran lightweight(hafif) class'lar olarak değerlendirebiliriz.
+            //Employee calisan1 = new Employee();
+            //{
+            //    Name = "Batuhan",
+            //    Surname = "Kahraman",
+            //    Position = 1
+            //};
+
+            //Employee calisan2 = new Employee();
+            //{
+            //    Name = calisan1.Name,
+            //    Surname = calisan1.Surname,
+            //    Position = 2
+            //};
+            #endregion
+
+            #region 16. Constructor Metod
+            //Bir classta bir nesne oluştururken her şeyden önce ilk olarak çalışan yapılardır.
+            //Constructorlar public olmalıdırlar.Class ismi ile aynı olmalıdırlar.Metodlara benzer ama geri dönüş tipi yoktur.
+            car ford = new car(); //Create an object of the car class (this will call the constructor)
+            Console.WriteLine(ford.model); //Print value of model
             #endregion
         }
     }
+    #region 17. Destructor Metod
+    //Destructor kısaca constructorın tam tersidir.
+    //Constructor için bir nesnenin istance'i alınırken ram'de ki Heap bölümünde yer ayırmadan önce çağrılan metod diyebiliriz.
+    //Destructor tam bu nesne ram'den silinmeden önce çağrılan metod olur.
+    //Class kapanmandan önce son olarak çalışan metodtur.
+
+    class Person
+    {
+
+        ~Person() //destructor
+        {
+            //cleanup statements...
+        }
+    }
+    #endregion
+
+    #region 18. Static Constructor
+    //Static constructor o sınıftan sadece ilk nesne üretildiğinde çalışır.
+    //Daha sonraki nesne üretme aşamlarında çağrılmaz. Static constructor kendine has özellikleri vardır.
+
+    //Static constructor herhangi bir access modifier almaz.
+    //Static constructor herhangi bir parametre almaz.
+    //Static constructor sadece ilk nesne üretme esnasında otomatik çağrılır.
+    //Static constructor direkt çağırılmaz.
+    //Bir sınıfta sadece bir tane static constructor olabilir.
+    //Static constructor sadece sınıfın static elemenlarına erişebilir.
+
+    //public class Araba
+    //{
+    //    public int yas;
+    //    public string adi;
+
+    //    static Araba() //Static constructor parametre almaz ve access identifier'i olmaz.
+    //    {
+    //        this.adi = "Ford";
+    //    }
+    //}
+    //Araba nesne1 = new Araba();
+    //Console.WriteLine(nesne1.adi); // Sadece ilk nesne üretildiğinde setlenecek
+    //Araba nesne2 = new Araba(); //Burası boş
+    #endregion
+
     #region 3. Sınıf Oluşturma ve Konumları
     // Bir sınıf namespace içinde, dışında yada bir sınıf içinde oluşturulabilir.
     // Aynı yerde aynı isimle 2 sınıf olamaz!
@@ -268,7 +359,7 @@ namespace oop
     class Banka
     {
         int bakiye;
-        
+
         public int Bakiye
         {
             get
@@ -327,7 +418,12 @@ namespace oop
 
     class myclass8
     {
+        int yas;
 
+        public double yasHesapla(int yas)
+        {
+            return this.yas + yas;
+        }
     }
 
     class Araba
@@ -389,12 +485,55 @@ namespace oop
 
         public int faktoriyelHesaplama(int deger)
         {
-            int sonuc=1;
+            int sonuc = 1;
             for (int i = 1; i <= Sayi; i++)
             {
                 sonuc *= i;
             }
             return sonuc;
+        }
+    }
+
+    //class myclass9
+    //{
+    //    public int x { get; init; } = 3;
+    //}
+
+    //public record Employee
+    //{
+    //    public string Name { get; init; }
+    //public string Surname { get; init; }
+    //public int Position { get; init; }
+
+    //}
+
+    class car
+{
+    public string model; //Create a field
+
+    //Create a class constructor for the car class
+    public car()
+    {
+        model = "Mustang"; //Set the initial value for model.
+    }
+}
+
+    class Pizza
+    {
+        public string pizzaBoyutu { get; set; } = "Orta Boy";
+        public int pizzaTurNo { get; set; } = 2;
+        public double pizzaFiyat { get; set; } = 150;
+
+        public void siparisVer(int pizzaNo, string boyut, string adres, double odenenPara)
+        {
+            if (odenenPara == pizzaFiyat)
+            {
+                Console.WriteLine(pizzaNo + " numaralı " + boyut + " pizzanız, " + adres + " adresine gönderilecektir. ");
+            }
+            else
+            {
+                Console.WriteLine("Lütfen pizza fiyatına eşit bir miktarda ödeme yapınız.");
+            }
         }
     }
 }
