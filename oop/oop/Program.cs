@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -144,16 +145,16 @@ namespace oop
 
 
             //Bir pizza sipariş uygulaması, pizza sınıfı oluşturalım pizzanın boyutu, malzemeleri, fiyatı gibi özellikleri içersin sipariş verme ve ödeme işlemlerini gerçekleştirebilecek metodları yazalım. 
-            Pizza pizza = new Pizza();
-            Console.WriteLine("Pizzanızın tür numarasını giriniz:");
-            pizza.pizzaTurNo = int.Parse(Console.ReadLine());
-            pizza.pizzaBoyutu = "Orta Boy";
-            Console.WriteLine("Lütfen adresinizi giriniz:");
-            string adres = Console.ReadLine();
-            Console.WriteLine("Lütfen ödeyeceğiniz miktarı giriniz:");
-            double odenenPara = int.Parse(Console.ReadLine());
-            pizza.siparisVer(pizza.pizzaTurNo,pizza.pizzaBoyutu, adres, odenenPara);
-            Console.ReadLine();
+            //Pizza pizza = new Pizza();
+            //Console.WriteLine("Pizzanızın tür numarasını giriniz:");
+            //pizza.pizzaTurNo = int.Parse(Console.ReadLine());
+            //pizza.pizzaBoyutu = "Orta Boy";
+            //Console.WriteLine("Lütfen adresinizi giriniz:");
+            //string adres = Console.ReadLine();
+            //Console.WriteLine("Lütfen ödeyeceğiniz miktarı giriniz:");
+            //double odenenPara = int.Parse(Console.ReadLine());
+            //pizza.siparisVer(pizza.pizzaTurNo,pizza.pizzaBoyutu, adres, odenenPara);
+            //Console.ReadLine();
             #endregion
 
             #region 14. Init-Only Proporties
@@ -190,6 +191,19 @@ namespace oop
             //Constructorlar public olmalıdırlar.Class ismi ile aynı olmalıdırlar.Metodlara benzer ama geri dönüş tipi yoktur.
             car ford = new car(); //Create an object of the car class (this will call the constructor)
             Console.WriteLine(ford.model); //Print value of model
+            #endregion
+
+            #region Not Hesaplama
+            //2 vize + 1 final notu içeren değişkenler olmalı. Geçme notunu hesaplayıp, geçme durumunu dönen bir hesaplama sınıfı yazın.
+            notHesaplama nh = new notHesaplama();
+            Console.WriteLine("İlk vize notunu giriniz:");
+            nh.vize1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("İkinci vize notunu giriniz:");
+            nh.vize2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Final notunu giriniz:");
+            nh.final = int.Parse(Console.ReadLine());
+            nh.gecmeHesaplama(nh.vize1, nh.vize2, nh.final);
+            Console.ReadLine();
             #endregion
         }
     }
@@ -533,6 +547,29 @@ namespace oop
             else
             {
                 Console.WriteLine("Lütfen pizza fiyatına eşit bir miktarda ödeme yapınız.");
+            }
+        }
+    }
+
+    class notHesaplama
+    {
+        public double vize1 {  get; set; }
+        public double vize2 { get; set;}
+        public double final { get; set;}
+        public void gecmeHesaplama(double vize1, double vize2, double final)
+        {
+            double ortalama = (vize1 * 0.2) + (final * 0.6) + (vize2 * 0.2);
+            if (ortalama < 50 && ortalama > 0)
+            {
+                Console.WriteLine("Kaldınız " + ortalama);
+            }
+            else if (ortalama >= 50 && ortalama <= 100)
+            {
+                Console.WriteLine("Geçtiniz " + ortalama);
+            }
+            else
+            {
+                Console.WriteLine("Hatalı not girişi");
             }
         }
     }
