@@ -195,15 +195,15 @@ namespace oop
 
             #region Not Hesaplama
             //2 vize + 1 final notu içeren değişkenler olmalı. Geçme notunu hesaplayıp, geçme durumunu dönen bir hesaplama sınıfı yazın.
-            notHesaplama nh = new notHesaplama();
-            Console.WriteLine("İlk vize notunu giriniz:");
-            nh.vize1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("İkinci vize notunu giriniz:");
-            nh.vize2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Final notunu giriniz:");
-            nh.final = int.Parse(Console.ReadLine());
-            nh.gecmeHesaplama(nh.vize1, nh.vize2, nh.final);
-            Console.ReadLine();
+            //notHesaplama nh = new notHesaplama();
+            //Console.WriteLine("İlk vize notunu giriniz:");
+            //nh.vize1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("İkinci vize notunu giriniz:");
+            //nh.vize2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Final notunu giriniz:");
+            //nh.final = int.Parse(Console.ReadLine());
+            //nh.gecmeHesaplama(nh.vize1, nh.vize2, nh.final);
+            //Console.ReadLine();
             #endregion
         }
     }
@@ -247,6 +247,96 @@ namespace oop
     //Araba nesne1 = new Araba();
     //Console.WriteLine(nesne1.adi); // Sadece ilk nesne üretildiğinde setlenecek
     //Araba nesne2 = new Araba(); //Burası boş
+    #endregion
+
+    #region 19. Kalıtım
+    //Inheritance (kalıtım), nesne yönelimli programlamanın en temel unsurlarından biridir.
+    //Kalıtım hiyerarşik sınıflandırma olanağı sağlar.
+    //Kalıtım kullanarak birbiri ile ilişkili bir grup nesnenin ortak özelliklerini tanımlayan temel bir sınıf oluşturabiliriz.
+    //Bu temel sınıf daha sonra belirli sınıflara kalıtım yoluyla aktarılır.
+
+    //Ornek1
+    //Kedi k = new Kedi();
+    //k.ad = "Nisa";
+    //k.boy = 35;
+    //k.kuyrukVarMi = true;
+
+    //Ornek2
+    //Ucgen ucgen = new Ucgen();
+    //ucgen.genislik = 10;
+    //ucgen.yukseklik = 2;
+
+    //ucgen.Goster();
+    //Console.WriteLine("Üçgenin alanı: " + ucgen.Alan());
+    #endregion
+
+    #region 20. Abstraction
+    //Karmaşıklığı yönetmek için kullanılır.
+    //Nesnenin diğer tüm nesne türlerinden ayıran temel özelliklerini belirtir,
+    //böylece izleyicinin bakış açısından açıkça tanımlanmış bir kavramsal sınır sağlar.
+
+    //Örnegimizde soyut bir MobilePhone sınıfı oluşturulmuş bulunmaktadır.
+    //Bu abstract sınıfa ait iki adet metod bulunmaktadır. Bunlar arama yapmak için kullanılan,
+    //Calling() ve mesaj gönderebilmek için kullanılan SendSMS() metodlarıdır. Ardından cep telefonu
+    //modellerini içeren sınıflar bu abstract sınıftan türetilmiş bulunmaktadır. Yeni türetilen modele
+    //ait sınıflar abstract class’ı kullanmaktadır. Çünkü tüm modeller için,
+    //abstract sınıftaki arama yapmak ve mesaj göndermek temel fonksiyonlardır.
+    //abstract class MobilePhone
+    //{
+    //    public void Calling();
+    //    public void SendSMS();
+    //}
+
+    //public class Samsung : MobilePhone
+    //{
+
+    //}
+    //public class Nokia2700 : MobilePhone
+    //{
+    //    public void FMRadio();
+    //    public void MP3();
+    //    public void Camera();
+    //}
+    //public class BlackBerry : MobilePhone
+    //{
+    //    public void FMRadio();
+    //    public void MP3();
+    //    public void Camera();
+    //    public void Recording();
+    //    public void ReadAndSendEmails();
+    //}
+    #endregion
+
+    #region 21. Interface
+    //Interfaceler, kendisinden kalıtım alan sınıfların içinde olması zorunlu olan yapıları tanımlarlar.
+    //Tek görevleri budur.Interfaceler bu yönleriyle abstract classlara benzerler.Ancak abstract class içerisinde,kendisinden kalıtım alan sınıfta yazılması zorunlu olmayacak yapılar da tanımlanabilir.
+    //Fakat interface tanımlanan herşey, kalıtımı alan sınıfta uygulanmak zorundadır.
+
+    //Arayüzler, sınıflara rehberlik etmek üzere oluşturulan nesneye dayalı programlamanın en önemli özelliklerinden biridir
+    //Sınıfların hangi metotları ve özellikleri içermesi gerektiğini arayüzler içerisinde bildiriyoruz.
+    //Arayüzler “interface” anahtar sözcüğü ile oluşturulur. Zorunlu olmamakla birlikte arayüz isimleri genellikle “I” harfiyle başlatılır.
+    //Böylece “I” ön ekini gören bir programcı onun bir arayüz olduğunu anlar. Arayüz içerisinde özelliklerin ve
+    //metotların sadece bildirimi yapılır. Yani herhangi bir şekilde özelliklere bir değer atanmaz sadece türleri ve
+    //isimleri yazılır, aynı şekilde metotların içerisine kodlar yazılmaz sadece geri dönüş türleri ve isimleri yazılır.
+
+    interface IKisi
+    {
+        string adSoyad {get; set; }
+        string adres { get; set; }
+        string departman { get; set; }
+        void bilgi();
+    }
+    class Yonetici : IKisi
+    {
+        public string adSoyad { get; set; }
+        public string adres { get; set; }
+        public string departman { get; set; }
+        public void bilgi()
+        {
+            Console.WriteLine("{0} isimli çalışan {1} departmanında yöneticidir.", adSoyad, departman);
+            Console.ReadLine();
+        }
+    }
     #endregion
 
     #region 3. Sınıf Oluşturma ve Konumları
@@ -571,6 +661,42 @@ namespace oop
             {
                 Console.WriteLine("Hatalı not girişi");
             }
+        }
+    }
+
+    public class Hayvan
+    {
+        public string ad { get; set; }
+        public decimal boy { get; set; }
+        public bool kuyrukVarMi { get; set; }
+
+        public string Mesaj()
+        {
+            return "Hayvanları sevelim...beni evde besleyebilirsiniz.";
+        }
+    }
+
+    public class Kedi: Hayvan
+    {
+
+    }
+
+    public class Sekil
+    {
+        public double genislik;
+        public double yukseklik;
+        public void Goster()
+        {
+            Console.WriteLine("Genişlik: " + genislik + ", Yükseklik: " + yukseklik);
+        }
+    }
+
+    public class Ucgen: Sekil
+    {
+        public string adi;
+        public double Alan()
+        {
+            return genislik * yukseklik / 2;
         }
     }
 }
